@@ -1,24 +1,23 @@
-// Farm House Game (Web Version) - Simple Background Only
-// Uses only barn.png as the background image
+
 
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
-// --- Asset loading ---
-const assetsPath = '../assets/'; // Adjust if needed
+
+const assetsPath = '../assets/'; 
 const images = {
   barn: new Image()
 };
-images.barn.src = assetsPath + 'barn.jpg'; // Place your barn/background image here
+images.barn.src = assetsPath + 'barn.jpg'; 
 
 const sounds = {
-  catch: new Audio(assetsPath + 'catch.mp3'), // Place your catch sound here
-  miss: new Audio(assetsPath + 'miss.mp3'),   // Place your miss sound here
-  gameover: new Audio(assetsPath + 'gameover.mp3') // Place your game over sound here
+  catch: new Audio(assetsPath + 'catch.mp3'), 
+  miss: new Audio(assetsPath + 'miss.mp3'),  
+  gameover: new Audio(assetsPath + 'gameover.mp3') 
 };
 
-// --- Game state ---
-let gameState = 'playing'; // 'playing', 'gameover'
+
+let gameState = 'playing'; 
 
 const basket = {
   x: 400,
@@ -34,7 +33,7 @@ const basket = {
   reg_eggs: 0
 };
 
-// Variables to control egg count label position
+
 let eggLabelX = 180; // default X for Gold
 let eggLabelY = 34;  // default Y for all
 
@@ -88,7 +87,7 @@ function drawScoreboard() {
   ctx.fillStyle = 'white';
   ctx.font = '20px sans-serif';
   ctx.fillText('Score: ' + basket.score, 20, 30);
-  // Egg counts at top (with Gold and Regular swapped)
+
   ctx.font = '18px sans-serif';
   ctx.fillStyle = 'white';
   ctx.fillText('Regular: ' + basket.reg_eggs, eggLabelX, eggLabelY);
